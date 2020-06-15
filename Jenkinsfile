@@ -1,8 +1,6 @@
 pipeline {
-    agent {
-        docker { image 'python:3' }
-    }
-    triggers {
+    agent any
+    triggers { 
         // Poll SCM every minute for new changes
         pollSCM('* * * * *')
     }
