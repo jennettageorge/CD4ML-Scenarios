@@ -1,6 +1,8 @@
 pipeline {
-    agent any
-    triggers { 
+    agent {
+        docker { image 'python:3' }
+    }
+    triggers {
         // Poll SCM every minute for new changes
         pollSCM('* * * * *')
     }
@@ -8,7 +10,7 @@ pipeline {
        // add timestamps to output
        timestamps()
     }
-    environment { 
+    environment {
         MLFLOW_TRACKING_URL = 'http://mlflow:5000'
     }
     stages {
