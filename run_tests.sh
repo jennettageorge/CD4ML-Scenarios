@@ -11,4 +11,4 @@ eval "$command"
 
 echo
 echo Flake8 comments:
-flake8 --max-line-length=120 cd4ml
+python3 -m flake8 --max-line-length=120 cd4ml
